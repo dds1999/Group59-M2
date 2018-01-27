@@ -36,3 +36,7 @@ bin/
 
 # generated jar files
 *.jar
+
+# Mac OS files
+.DS_Store
+
