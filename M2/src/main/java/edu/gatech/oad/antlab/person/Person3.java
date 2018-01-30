@@ -4,7 +4,7 @@ package edu.gatech.oad.antlab.person;
  *  returns their name and a
  *  reversed string 
  *  
- *  @author  Bob
+ *  @author  Renee Botyrius
  *  @version 1.1
  */
 public class Person3 {
@@ -43,6 +43,6 @@ public class Person3 {
 	 */
 	private String calc(String input) {
 	  //Person 3 put your implementation here
-	  return null;
+	  return "hi i can change a file:)";
 	}
 }
