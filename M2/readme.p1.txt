@@ -1,2 +1,2 @@
 Destini Deinde-Smith
-dds7@gatech.edu
+ads7@gatech.edu
