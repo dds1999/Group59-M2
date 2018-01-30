@@ -7,25 +7,34 @@
  */
 defaultTasks '<jar>'
 
-apply plugin: 'java'
-
-//Defines the jar task
+apply plugin: '<java>'
 
 dependencies {
-    // Use JUnit test framework
+    // Compiles these files so that gradle knows about these files
 	compile files('lib/resources.jar')
+    // Use JUnit test framework - It knows where junit is because it's looking on 
+    // the jcenter repo as declared down in repositories section
     testCompile group: 'junit', name: 'junit', version: '4.+'
 }
 
-
+//Defines the jar task
 jar {
+    // Sets attributes for manifest file created with jar.
+    // Manifest files are a part jar files that give it extra information
     manifest {
+        // Class-Path is relative to the location of the jar file that this is created
+        // Main-Class is the full path of the class file with it's package
+        // I think it knows about the package because the java plugin automatically
+        // looks for a src directory and compiles everything in it
         attributes("Class-Path" : "lib/resources.jar",
                    "Main-Class" : "edu.gatech.oad.antlab.pkg1.AntLabMain")
     }
 
+    //Sets the output location of jar file to the same folder that the build.gradle is in
 	destinationDir = file('.')
 }
+
+// For the purposes of CS2340 M2, you don't need to worry about this.
 // In this section you declare where to find the dependencies of your project
 repositories {
     // Use jcenter for resolving your dependencies.
